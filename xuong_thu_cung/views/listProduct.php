@@ -7,9 +7,13 @@
 </head>
 <body>
     <ul>
-        <?php foreach($listProduct as $key=>$product):?>
-            <li><?php echo $product['ten_san_pham'] ?></li>
-        <?php endforeach ?>
+        <?php if (!empty($listProduct)): ?>
+            <?php foreach ($listProduct as $key => $product): ?>
+                <li><?php echo htmlspecialchars($product['ten_san_pham']); ?></li>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <li>No products found</li>
+        <?php endif; ?>
     </ul>
 </body>
 </html>
